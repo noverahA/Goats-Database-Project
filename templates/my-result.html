@@ -1,0 +1,60 @@
+<!-- /templates/my-result.html-->
+<!-- Template Provided by John Degood-->
+<!-- Stylized Results Table -- By Brielle Damiani -->
+<html>
+    <head>
+        <title>Flask result table using nested for loops</title>
+    </head>
+
+    <!-- Add some style to table (OPTIONAL) -->
+    <style type="text/css">
+
+
+        /* Style for table headers */
+        th {
+            color: #cdf0f1;
+            background-color: #101935; /* Light gray background */
+            padding: 10px; /* Add some padding */
+            border: 1px solid #101935; /* Add border */
+        }
+
+
+        /* Alternate row coloring */
+        tr:nth-of-type(2n) {
+            background-color: #cdf0f1; /* Lighter background for even rows */
+        }
+
+
+        /* Style for table cells */
+        td {
+            padding: 10px; /* Add padding */
+            border: 1px solid #06adb3; /* Add border */
+        }
+
+
+    </style>
+
+
+    <body>
+        <table>
+            <!-- column header for loop in jinja template -->
+            <thead>
+                <tr>
+                {%for head in heads%}
+                    <th>{{head}}</th>
+                {%endfor%}
+                </tr>
+            </thead>
+            <!-- nested for loops in jinja template -->
+            <tbody>
+            {%for row in rows%}
+                <tr>
+                {%for col in row%}
+                    <td>{{col}}</td>
+                {%endfor%}
+                </tr>
+            {%endfor%}
+            </tbody>
+        </table>
+    </body>
+</html>

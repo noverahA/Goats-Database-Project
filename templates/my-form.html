@@ -1,0 +1,176 @@
+<!-- /templates/my-form.html
+    Template Provided by John
+    Worked on by Brielle Damiani  
+    Description: Stylizing / HTML for Web Page-->
+
+<html>
+    <head>
+        
+        <title>Group 13 Goats Database</title>
+    </head>
+    <body>
+        <h1 id="page_header">Group 13 Goats Database</h1>
+        <div style="text-align: center;">
+            <p>Group 13's database aims to answer two questions</p>
+            <p>1. A Progeny Report</p>
+            <p>2. The Optimal Birth Date</p>
+        </div>
+        <!-- QUERIES ON PROGENY REPORT-->
+        <h2 id="section_header">Queries Based on Progeny</h2>
+         <!-- Query 1 For Progeny showing all the kids to a Dam-->
+        <form action="/query1-handler" method="POST">
+            <fieldset>
+                <legend id="section_header">Find all the kids belonging to a specific Dam</legend>
+                <div>
+                    <label for="dam_tag">Enter Dam tag:</label><br>
+                    <input type="text" id="dam_tag" name="dam_tag" placeholder="Example Input: 19211" required><br>
+                </div>
+                <div>
+                    <input type="checkbox" id="checkbox" name="checkbox">
+                    <label for="show_weights">Show Weights</label>
+                    <br>
+                    </div>
+                <div>
+                    <input type="submit" value="Submit"> 
+                </div>
+            </fieldset>
+        </form>
+
+        
+
+        <!-- Query 4 showing all the kids born to a specfic Sire-->
+        <form action="/query4-handler" method="POST">
+            <fieldset>
+               <legend id="section_header">Find all the kids belonging to a specific Sire</legend>
+               <div>
+                   <label for="dam_tag">Enter Sire tag:</label><br>
+                   <input type="text" id="sire_tag" name="sire_tag" placeholder="Example Input: BG4" required><br>
+               </div>
+               <div>
+                   <input type="checkbox" id="checkbox" name="checkbox">
+                   <label for="show_weights">Show Weights</label>
+                   <br>
+                </div>
+               <div>
+                   <input type="submit" value="Submit"> 
+               </div>
+           </fieldset>
+        </form>
+        <!-- Query 6 showing Dams with range of Average BWTs-->
+        <form action="/query6-handler" method="POST">
+            <fieldset>
+               <legend id="section_header">See Dam Information based on Number of Kids</legend>
+               <div>
+                   <label for="low">Minimum Number of Kids:</label><br>
+                   <input type="text" id="low" name="low" placeholder="Example Input: 3" required><br>
+               </div>
+               <div>
+                   <label for="high">Maximum Number of Kids:</label><br>
+                   <input type="text" id="high" name="high" placeholder="Example Input: 9" required><br>
+               </div>
+               <div>
+                <input type="checkbox" id="checkbox" name="checkbox">
+                <label for="show_weights">See Newest Dams First</label>
+                <br>
+                </div>
+            <div>
+               <div>
+                   <input type="submit" value="Submit"> 
+               </div>
+           </fieldset>
+        </form>
+
+        <!-- QUERIES ON OPTIMAL BIRTHDATE-->
+        <h2 id="section_header">Queries Based on Optimal Birthdate</h2>
+        <!-- Query 2 Showing all the goats born on a specific day -->
+        <form action="/query2-handler" method="POST">
+            <fieldset>
+               <legend id="section_header">See goat information for goats born on a specific day</legend>
+               <div>
+                   <label for="dob_month">Enter Numeric Month:</label><br>
+                   <input type="text" id="dob_month" name="dob_month" placeholder="Example Input: 3" required>
+                </div>
+                <div>
+                   <label for="dob_day">Enter Numeric Day:</label><br>
+                   <input type="text" id="dob_day" name="dob_day" placeholder="Example Input: 18" required><br>
+               </div>
+               <div>
+                   <input type="submit" value="Submit"> 
+               </div>
+           </fieldset>
+        </form>
+        <!-- Query 7 -->
+        <form action="/query7-handler" method="POST">
+            <fieldset>
+               <legend id="section_header">See Goats born between Specified Dates</legend>
+               <div>
+                   <label for="start_date">Enter Start Date:</label><br>
+                   <input type="text" id="start_date" name="start_date" placeholder="YYYY-MM-DD" required><br>
+               </div>
+               <div>
+                   <label for="end_date">Enter End Date:</label><br>
+                   <input type="text" id="end_date" name="end_date" placeholder="YYYY-MM-DD" required><br>
+               </div>
+               <div>
+                   <input type="submit" value="Submit"> 
+               </div>
+           </fieldset>
+        </form>
+         <!-- Query 10 -->
+         <form action="/query10-handler" method="POST">
+            <fieldset>
+               <legend id="section_header">See Goat Stats for Specfic Days of the Year</legend>
+               <div>
+                   <label for="input_month">Enter Numeric Month:</label><br>
+                   <input type="text" id="input_month" name="input_month" placeholder="Example Input: 3" required><br>
+               </div>
+               <div>
+                   <label for="input_year">Enter Numeric Year:</label><br>
+                   <input type="text" id="input_year" name="input_year" placeholder="Example Input: 2021" required><br>
+               </div>
+               <div>
+                   <input type="submit" value="Submit"> 
+               </div>
+           </fieldset>
+        </form>
+       
+    </body>
+
+    <!-- minimal styling -->
+    <style>
+        form {
+            margin: 1%;
+        }
+
+        div {
+            margin: 1% 0;
+            font-family: 'Times New Roman', Times, serif;
+            color: #101935;
+            text-align: left;
+            padding-left: 30px;
+        }
+        body{
+            background-color: #F2FDFF;
+            text-decoration-color: #101935;
+            text-align: left;
+            padding-left: 15px;
+        }
+        #page_header{
+            color: #06adb3;
+            text-align: center;
+        }
+        #section_header{
+            color: #564787;
+        }
+        #query_header{
+            color: #101935;
+            font-family: Verdana, sans-serif;
+        }
+        #warning{
+            color: #101935;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 15;
+            padding-right: 20px;
+        }
+    </style>
+</html>
